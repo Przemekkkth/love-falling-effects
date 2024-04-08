@@ -101,7 +101,10 @@ function FallingSand:update(dt)
 end
 
 function FallingSand:draw()
-    love.graphics.print("Falling Sand", 0, 0)
+    local font = love.graphics.getFont()
+    local fontWidth = font:getWidth("Falling Sand")
+    local fontHeight = font:getHeight()
+    love.graphics.print("Falling Sand", WIDTH / 2, 50, 0, 1, 1, fontWidth / 2, fontHeight / 2)
     for i = 1, self.cols do 
         for j = 1, self.rows do 
             if self.grid[i][j] > 0 then 
@@ -112,6 +115,7 @@ function FallingSand:draw()
             end
         end
     end
+    love.graphics.setColor(1.0, 1.0, 1.0)
 end
 
 function FallingSand:withinCols(x)

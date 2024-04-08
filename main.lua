@@ -23,7 +23,7 @@ function love.load()
     input:bind('escape', 'escape')
     input:bind('mouse1', 'leftButton')
     love.window.setMode(WIDTH, HEIGHT)
-    love.window.setTitle("Love falling graphical effect")
+    love.window.setTitle("LÖVE falling graphical effects")
 
     current_room = nil
     gotoRoom('Menu')
@@ -55,7 +55,6 @@ function recursiveEnumerate(folder, file_list)
         local file = folder .. '/' .. item
         local fileInfo = love.filesystem.getInfo(file)
         if fileInfo.type == "file" then
-            print("file ",file)
             table.insert(file_list, file)
         elseif fileInfo.type == "directory" then
             recursiveEnumerate(file, file_list)
